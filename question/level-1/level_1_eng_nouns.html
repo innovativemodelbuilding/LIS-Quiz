@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Round 1 | Quiz</title>
+    <!-- point to your question.css in the root css/ folder -->
+    <link rel="stylesheet" href="../../css/question.css" />
+  </head>
+  <body>
+    <!-- Loader -->
+    <div id="loader">
+      <div class="loader"></div>
+    </div>
+
+    <!-- Site Header (same as on start page) -->
+    <!-- ========== Site Header ========== -->
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="logo">
+          <span class="logo-icon">🎓</span>
+          <span class="logo-text">Loyal International School</span>
+        </div>
+        <nav class="main-nav">
+          <a href="/">Home</a>
+          <a href="#levels">Levels</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <!-- no more menu-icon -->
+      </div>
+    </header>
+
+    <!-- Quiz Content -->
+    <main class="quiz-container">
+      <div class="question-section">
+        <h3 id="question-text">Loading...</h3>
+        <ul class="options" id="options-list">
+          <!-- Options dynamically generated -->
+        </ul>
+      </div>
+      <div id="feedback" class="hidden"></div>
+      <div id="explanation" class="hidden"></div>
+      <button id="back-btn" class="hidden" onclick="loadPreviousQuestion()">Back</button>
+      <button id="next-btn" class="hidden" onclick="loadNextQuestion()">Next</button>
+    </main>
+
+    <script>
+      const questions = [
+        {
+          question: "Which word is a pet animal?",
+          options: ["Chair", "Dog", "Blue", "Run"],
+          correct: "Dog",
+          explanation: "Dog is a common pet animal."
+        },
+        {
+          question: "Which word is something you write with?",
+          options: ["Pencil", "Soft", "Jump", "Apple"],
+          correct: "Pencil",
+          explanation: "Pencil is a tool used for writing or drawing."
+        },
+        {
+          question: "Which word is a type of vehicle?",
+          options: ["Car", "Green", "Sing", "Wet"],
+          correct: "Car",
+          explanation: "Car is a vehicle used for transportation."
+        },
+        {
+          question: "Which word is a place where you live?",
+          options: ["House", "Hot", "Sleep", "Tall"],
+          correct: "House",
+          explanation: "House is the building where people live."
+        },
+        {
+          question: "Which word is a fruit you can eat?",
+          options: ["Table", "Banana", "Soft", "Run"],
+          correct: "Banana",
+          explanation: "Banana is a sweet, edible fruit."
+        }
+      ];
+    </script>
+
+    <!-- point to your main quiz logic -->
+    <script src="../../js/script.js"></script>
+  </body>
+</html>
