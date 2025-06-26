@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Contact Us | QuizApp</title>
+    <link rel="stylesheet" href="../css/index.css" />
+  </head>
+  <body>
+    <!-- Loader -->
+    <div id="loader">
+      <div class="loader"></div>
+    </div>
+
+    <!-- Site Header -->
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="logo">
+          <span class="logo-icon">🎓</span>
+          <span class="logo-text">QuizApp</span>
+        </div>
+        <nav class="main-nav">
+          <a href="/">Home</a>
+          <a href="/levels">Levels</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="menu-icon" id="menu-toggle">☰</div>
+      </div>
+    </header>
+
+    <!-- Contact Form -->
+    <main class="quiz-container">
+      <h1>Contact Us</h1>
+      <form action="/submit-contact" method="POST">
+        <div class="form-group">
+          <label for="name">Your Name</label><br/>
+          <input type="text" id="name" name="name" required style="width:100%; padding:10px; margin:8px 0; border:1px solid #ccc; border-radius:4px;">
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label><br/>
+          <input type="email" id="email" name="email" required style="width:100%; padding:10px; margin:8px 0; border:1px solid #ccc; border-radius:4px;">
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label><br/>
+          <textarea id="message" name="message" rows="5" required
+            style="width:100%; padding:10px; margin:8px 0; border:1px solid #ccc; border-radius:4px;"></textarea>
+        </div>
+        <button type="submit" class="card-btn" style="--card-color:#fd2828;">Send Message</button>
+      </form>
+    </main>
+
+    <!-- Site Footer -->
+    <footer id="contact" class="site-footer">
+      <div class="footer-inner">
+        <section class="footer-section">
+          <h4>Quick Links</h4>
+          <nav aria-label="Quick Links">
+            <ul class="footer-links">
+              <li><a href="/">Home</a></li>
+              <li><a href="/levels">Levels</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
+        </section>
+        <section class="footer-section">
+          <h4>Contact Us</h4>
+          <address>
+            123 School Lane<br/>
+            City, State ZIP<br/>
+            <a href="mailto:info@lis.edu">info@lis.edu</a><br/>
+            <a href="tel:+1234567890">+1 234-567-890</a>
+          </address>
+        </section>
+        <section class="footer-section social">
+          <h4>Follow Us</h4>
+          <ul class="social-links" aria-label="Social Media">
+            <li><a href="#" title="Twitter">🐦 Twitter</a></li>
+            <li><a href="#" title="Facebook">📘 Facebook</a></li>
+            <li><a href="#" title="Instagram">📸 Instagram</a></li>
+          </ul>
+        </section>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Loyal International School. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+  </body>
+</html>
