@@ -1046,25 +1046,7 @@ body {
   line-height: 1.4;
 }
 
-/* ---------- Loader ---------- */
-#loader {
-  position: fixed;
-  inset: 0;
-  background-color: #f9f9f9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-}
-.loader {
-  width: 50px;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  border: 8px solid #fd2828;
-  animation: l20-1 0.8s infinite linear alternate,
-             l20-2 1.6s infinite linear;
-}
-/* (keep your keyframes l20-1 and l20-2 here) */
+
 
 /* ---------- Hero Section ---------- */
 .hero {
@@ -1297,4 +1279,13 @@ header {
   align-items: center;
   height: 60px; /* Fixed height for consistency */
   padding: 0 20px;
+}
+
+/* center the main title on your start page */
+.startpage .page-title {
+  text-align: center;
+  font-size: 2rem;       /* adjust size for kids */
+  margin: 1.5em 0;       /* some breathing room above/below */
+  color: #d32f2f;        /* your red theme color */
+  font-weight: bold;
 }
