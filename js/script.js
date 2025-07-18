@@ -255,3 +255,5 @@ function addEmojiRain(emoji, count = 30) {
     if (container.childElementCount === 0) container.remove();
   }, 5000);
 }
+
+

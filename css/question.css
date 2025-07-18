@@ -189,7 +189,7 @@ h3 {
   border: 3px solid #ffcccc;
   border-left: 6px solid var(--primary-blue);
   background: var(--light-hover);
-  border-radius: 1rem;
+  border-radius: 2rem;
   color: #31708f;
   font-size: 1.1rem;
   animation: fadeIn 1s ease;
