@@ -2,14 +2,14 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   // ─── Compute “base” so all links/images point to your repo root ───
-  // e.g. "/LIS-Quiz/" on GitHub Pages, or "/" on a custom domain
+  // e.g. "/LIS-Quiz/" on GitHub Pages, or "/" on a custom domain/local
   const pathParts = window.location.pathname.split('/');
   const repoName  = pathParts[1];                // "LIS-Quiz" when hosted
-  const base      = repoName ? /${repoName}/ : '/';
+  const base      = repoName ? `/${repoName}/` : '/';
 
   // ─── 1) HEADER + HAMBURGER ─────────────────────────────────────────
-  const headerHtml = 
-    `<header class="site-header">
+  const headerHtml = `
+    <header class="site-header">
       <div class="header-inner">
         <div class="logo">
           <a href="${base}index.html" class="logo-link">
@@ -31,13 +31,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         <!-- Main navigation -->
         <nav class="main-nav" id="nav-menu">
-          <a href="${base}index.html"               class="nav-link">Home</a>
-          <a href="${base}pages/aboutus.html"       class="nav-link">About Us</a>
-          <a href="${base}pages/contactus.html"     class="nav-link">Contact</a>
+          <a href="${base}index.html"           class="nav-link">Home</a>
+          <a href="${base}pages/aboutus.html"   class="nav-link">About Us</a>
+          <a href="${base}pages/contactus.html" class="nav-link">Contact</a>
         </nav>
       </div>
     </header>
-  ;`
+  `;
   const headerEl = document.getElementById('site-header-placeholder');
   if (headerEl) headerEl.outerHTML = headerHtml;
 
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </section>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2025 Loyal's M.C.Q's'. All rights reserved.</p>
+        <p>&copy; 2025 Loyal's MCQ. All rights reserved.</p>
       </div>
     </footer>
   `;
@@ -82,18 +82,18 @@ document.addEventListener('DOMContentLoaded', () => {
   if (footerEl) footerEl.outerHTML = footerHtml;
 
   // ─── 3) HAMBURGER MENU TOGGLE ───────────────────────────────────────
-  const hamburger = document.getElementById('hamburger');
-  const navMenu   = document.getElementById('nav-menu');
+  const ham = document.getElementById('hamburger');
+  const nav = document.getElementById('nav-menu');
 
-  if (hamburger && navMenu) {
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      navMenu.classList.toggle('active');
+  if (ham && nav) {
+    ham.addEventListener('click', () => {
+      ham.classList.toggle('active');
+      nav.classList.toggle('active');
     });
-    navMenu.querySelectorAll('.nav-link').forEach(link => {
+    nav.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
+        ham.classList.remove('active');
+        nav.classList.remove('active');
       });
     });
   }
