@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="logo">
           <a href="../../../index.html">
             <img
-              src="../../../image/Loyal_International_School_page-0001-removebg-preview.png"
+              src="../../../image/Loyal_International_School_logo.png"
               class="logo-icon"
               alt="Logo"
             />
