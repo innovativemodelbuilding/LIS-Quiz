@@ -1,98 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Contact Us | QuizApp</title>
-    <link rel="stylesheet" href="../css/index.css" />
-  </head>
-  <body>
-    <!-- Loader -->
-    <div id="loader">
-      <div class="loader"></div>
-    </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us – Loyal's MCQ</title>
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Comic+Neue:wght@700&family=Fredoka:wght@700&family=Nunito:wght@600&family=Poppins:wght@500&family=Quicksand:wght@400&display=swap"
+    rel="stylesheet"
+  />
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="../css/index.css" />
+  <style>
+    .contact-content {
+      margin: 4rem auto;
+      max-width: 800px;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(8px);
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+    .contact-content h1 {
+      font-family: 'Fredoka', cursive;
+      font-size: 2.5rem;
+      color: #c61414;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+    .contact-info {
+      flex: 1;
+      min-width: 260px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #03396c;
+    }
+    .contact-info p {
+      margin-bottom: 1rem;
+    }
+    .contact-info a {
+      color: #c61414;
+      text-decoration: underline;
+    }
+    .contact-map {
+      flex: 1;
+      min-width: 260px;
+    }
+    .contact-map iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 0.5rem;
+    }
+    @media (max-width: 480px) {
+      .contact-grid {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .contact-map iframe {
+        height: 200px;
+      }
+    }
 
-    <!-- Sticky Header -->
-<header class="site-header">
-  <div class="header-inner">
-    <div class="logo">
-       <img src="../image/Loyal_International_School_page-0001-removebg-preview.png" class="logo-icon" alt="Logo" />
-      <span class="logo-text">LOYAL M.C.Q's</span>
-    </div>
-    <nav class="main-nav">
-      <a href="../index.html">Home</a>
-      <a href="#levels">Levels</a>
-      <a href="./pages/contactus.html">Contact</a>
-    </nav>
-  </div>
-</header>
-
-    <!-- Contact Form -->
-    <main class="quiz-container">
+    
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <div id="site-header-placeholder"></div>
+  
+  <main>
+    <section class="contact-content">
       <h1>Contact Us</h1>
-      <form action="/submit-contact" method="POST">
-        <div class="form-group">
-          <label for="name">Your Name</label><br/>
-          <input type="text" id="name" name="name" required style="width:100%; padding:10px; margin:8px 0; border:1px solid #ccc; border-radius:4px;">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p><strong>Website:</strong> <a href="https://loyal-international-school.com/" target="_blank" rel="noreferrer">loyal-international-school.com</a></p>
+          <p><strong>Address:</strong><br>
+            JFUA3587, 6338 Uthman Ibn Al Yaman,<br>
+            Abhur Al Janubiyah District,<br>
+            3587, Jeddah 23734, Saudi Arabia
+          </p>
+          <p><strong>Phone:</strong> <a href="tel:+966506662939">+966 50 666 2939</a></p>
+          <p><strong>Email:</strong> <a href="mailto:loyal.int.school@gmail.com">loyal.int.school@gmail.com</a></p>
         </div>
-        <div class="form-group">
-          <label for="email">Email Address</label><br/>
-          <input type="email" id="email" name="email" required style="width:100%; padding:10px; margin:8px 0; border:1px solid #ccc; border-radius:4px;">
+        <div class="contact-map">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d559.6190323391629!2d39.14743305590342!3d21.748825910986756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c163003f08ddd5%3A0xcab3d80b7feb4399!2z2YXYr9ix2LPYqSDYp9mE2YjZhNin2KEg2KfZhNi52KfZhNmF2YrYqQ!5e0!3m2!1sen!2sin!4v1752096732494!5m2!1sen!2sin" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
         </div>
-        <div class="form-group">
-          <label for="message">Message</label><br/>
-          <textarea id="message" name="message" rows="5" required
-            style="width:100%; padding:10px; margin:8px 0; border:1px solid #ccc; border-radius:4px;"></textarea>
-        </div>
-        <button type="submit" class="card-btn" style="--card-color:#fd2828;">Send Message</button>
-      </form>
-    </main>
-
-     <!-- Professional Footer -->
-    <footer id="contact" class="site-footer">
-  <div class="footer-inner">
-
-    <!-- Quick Links -->
-    <section class="footer-section">
-      <h4>Quick Links</h4>
-      <nav aria-label="Quick Links">
-        <ul class="footer-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#levels">Levels</a></li>
-          <li><a href="./pages/contactus.html">Contact</a></li>
-        </ul>
-      </nav>
+      </div>
     </section>
+  </main>
+  
+  <!-- Professional Footer -->
+    <div id="site-footer-placeholder"></div>
 
-    <!-- Contact Info -->
-    <section class="footer-section">
-      <h4>Contact Us</h4>
-      <address>
-        Uthman Ibn Al-Yaman Street<br>
-        Kingdom of Saudi Arabia, Jeddah<br>
-        <a href="mailto:loyal.int.school@gmail.com">loyal.int.school@gmail.com</a><br>
-        <a href="tel:+966 54 895 3829 ">+966 54 895 3829 </a>
-      </address>
-    </section>
-
-    <!-- Social Media -->
-    <section class="footer-section social">
-      <h4>Follow Us</h4>
-      <ul class="social-links" aria-label="Social Media">
-        <li><a href="#" title="Twitter">🐦 Twitter</a></li>
-        <li><a href="#" title="Facebook">📘 Facebook</a></li>
-        <li><a href="#" title="Instagram">📸 Instagram</a></li>
-      </ul>
-    </section>
-
-  </div>
-
-  <!-- Bottom Bar -->
-  <div class="footer-bottom">
-    <p>&copy; 2025 Loyal International School. All rights reserved.</p>
-  </div>
-</footer>
-
-    <script src="../js/script.js"></script>
-  </body>
+    <!-- Shared script that injects header & footer -->
+ 
+    <script src="../js/partials.js"></script>
+</body>
 </html>

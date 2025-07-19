@@ -94,8 +94,6 @@ body {
   --btn-hover: #0056b3;
 }
 
-
-
 /* Quiz Container */
 .quiz-container {
   background: #ffffff;
@@ -158,6 +156,7 @@ h3 {
   color: #000;
   margin-right: 1rem;
   font-size: 1.2rem;
+  flex: none;
 }
 .option-text {
   flex: 1;
@@ -234,108 +233,72 @@ button:hover {
 /* Utility */
 .hidden { display: none; }
 
-/* Responsive adjustments */
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes slideIn {
+  from { transform: translateY(-10px); opacity: 0; }
+  to   { transform: translateY(0);     opacity: 1; }
+}
+
+/* ========== Mobile / Tablet Improvements ========== */
 @media (max-width: 768px) {
-  .quiz-container { padding: 1.5rem; margin: 2rem auto; }
+  .quiz-container {
+    padding: 1rem;
+    max-width: 100%;          /* never exceed viewport */
+    margin: 2rem auto;
+    box-sizing: border-box;
+  }
   h3 { font-size: 1.8rem; }
-  .options li { padding: 0.8rem 1rem; border-radius: 0.8rem; }
-  .option-text, .option-label { font-size: 1.1rem; }
-  button, #back-btn { padding: 0.8rem 1.5rem; font-size: 1.1rem; }
+  .options li {
+    display: flex;
+    flex-direction: row;      /* keep label + text on one line */
+    align-items: center;
+    padding: 0.8rem 1rem;
+    border-radius: 0.8rem;
+  }
+  .option-label {
+    font-size: 1rem;          /* same size as text */
+    margin-right: 0.75rem;
+  }
+  .option-text { font-size: 1rem; }
+  button, #back-btn {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+  #feedback, #explanation {
+    font-size: 1rem;
+  }
 }
+
 @media (max-width: 480px) {
-  .quiz-container { padding: 1rem; margin: 1rem auto; }
-  h3 { font-size: 1.6rem; text-align: center; }
-  .options li { flex-direction: column; align-items: flex-start; }
-  .icon { margin: 0.5rem 0 0; }
+  .quiz-container {
+    padding: 0.8rem;
+    margin: 1rem auto;
+  }
+  h3 {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+  .options li {
+    padding: 0.6rem 0.8rem;
+  }
+  .option-label {
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+  }
+  .option-text { font-size: 0.9rem; }
+  button, #back-btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+  #feedback, #explanation {
+    font-size: 0.9rem;
+  }
 }
 
-
-  /* Animations */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-  @keyframes slideIn {
-    from {
-      transform: translateY(-10px);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-
-  /* Responsive Design for Mobile */
-  @media (max-width: 768px) {
-    .quiz-container {
-      padding: 15px;
-      width: 90%;
-    }
-
-    h3 {
-      font-size: 1.2em;
-    }
-
-    .options li {
-      padding: 10px 12px;
-    }
-
-    .option-text {
-      font-size: 1em;
-    }
-
-    .option-label {
-      font-size: 1.1em;
-    }
-
-    button {
-      font-size: 1em;
-      padding: 8px 16px;
-    }
-
-    #back-btn {
-      margin-right: 20px;
-    }
-
-    #feedback,
-    #explanation {
-      font-size: 1em;
-    }
-  }
-
-  @media (max-width: 480px) {
-    h3 {
-      font-size: 1.1em;
-      margin-bottom: 15px;
-    }
-
-    .options li {
-      padding: 8px 10px;
-    }
-
-    .option-label {
-      font-size: 1em;
-    }
-
-    .option-text {
-      font-size: 0.9em;
-    }
-
-    button {
-      font-size: 0.9em;
-      padding: 8px 15px;
-    }
-
-    #back-btn {
-      margin-right: 52vw;
-    }
-  }
 
   /* ========== Site Footer ========== */
 .site-footer {
@@ -581,4 +544,50 @@ header {
   align-items: center;
   height: 60px; /* Fixed height for consistency */
   padding: 0 20px;
+}
+
+/* ── Hamburger & Off-Canvas Nav (no impact on existing styles) ── */
+.hamburger {
+  display: none;             /* hide by default */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 1001;
+}
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: #ff0808;
+  border-radius: 2px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+/* Off-canvas nav hidden by default */
+#nav-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 70%;
+  max-width: 300px;
+  height: 100vh;
+  background: #f0f0f0;
+  padding-top: 70px;         /* match your header height */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+/* Slide-in when active */
+#nav-menu.active {
+  left: 0;
+}
+
+/* Only show hamburger + off-canvas nav on mobile/tablet */
+@media (max-width: 900px) {
+  .hamburger {
+    display: flex;
+  }
 }
