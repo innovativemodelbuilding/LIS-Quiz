@@ -1,20 +1,18 @@
 // js/partials.js
-
 document.addEventListener('DOMContentLoaded', () => {
   // 1) HEADER + HAMBURGER
   const headerHtml = `
     <header class="site-header">
       <div class="header-inner">
         <div class="logo">
-          <a href="../../../index.html">
+          <a href="index.html" class="logo-link">
             <img
-              src="../../../image/Loyal_International_School_logo.png"
+              src="image/Loyal_International_School_logo.png"
               class="logo-icon"
               alt="Logo"
             />
-            </a>
             <span class="logo-text">Loyal's MCQ</span>
-          
+          </a>
         </div>
 
         <!-- Hamburger icon (visible only on ≤900px) -->
@@ -26,9 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         <!-- Main navigation -->
         <nav class="main-nav" id="nav-menu">
-          <a href="../../../index.html" class="nav-link">Home</a>
-          <a href="../../../pages/aboutus.html" class="nav-link">About Us</a>
-          <a href="../../../pages/contactus.html" class="nav-link">Contact</a>
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="pages/aboutus.html" class="nav-link">About Us</a>
+          <a href="pages/contactus.html" class="nav-link">Contact</a>
         </nav>
       </div>
     </header>

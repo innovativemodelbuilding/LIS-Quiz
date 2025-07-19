@@ -437,3 +437,21 @@ header {
     display: flex;
   }
 }
+
+/* ── Logo Alignment ── */
+.site-header .header-inner .logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;        /* space between image & text */
+}
+
+.site-header .logo-icon {
+  height: 50px;       /* tweak as needed */
+  width: auto;
+}
+
+.site-header .logo-text {
+  font-size: 1.4rem;  /* adjust size */
+  line-height: 1;     /* prevents any extra vertical shift */
+  color: #171717;     /* or whatever your theme color is */
+}
