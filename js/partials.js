@@ -5,11 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // e.g. "/LIS-Quiz/" on GitHub Pages, or "/" on a custom domain
   const pathParts = window.location.pathname.split('/');
   const repoName  = pathParts[1];                // "LIS-Quiz" when hosted
-  const base      = repoName ? `/${repoName}/` : '/';
+  const base      = repoName ? /${repoName}/ : '/';
 
   // ─── 1) HEADER + HAMBURGER ─────────────────────────────────────────
-  const headerHtml = `
-    <header class="site-header">
+  const headerHtml = 
+    `<header class="site-header">
       <div class="header-inner">
         <div class="logo">
           <a href="${base}index.html" class="logo-link">
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </nav>
       </div>
     </header>
-  `;
+  ;`
   const headerEl = document.getElementById('site-header-placeholder');
   if (headerEl) headerEl.outerHTML = headerHtml;
 
