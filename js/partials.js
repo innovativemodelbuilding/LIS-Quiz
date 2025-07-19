@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </section>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2025 Loyal International School. All rights reserved.</p>
+        <p>&copy; 2025 Loyal's M.C.Q's'. All rights reserved.</p>
       </div>
     </footer>
   `;
