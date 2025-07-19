@@ -1290,66 +1290,85 @@ header {
   font-weight: bold;
 }
 
-/* ── Hamburger & Off-Canvas Nav (no impact on existing styles) ── */
-.hamburger {
-  display: none;             /* hide by default */
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 22px;
-  cursor: pointer;
-  z-index: 1001;
-}
-.hamburger span {
-  display: block;
-  height: 3px;
-  background: #ff0808;
-  border-radius: 2px;
-  transition: transform 0.3s ease, background 0.3s ease;
-}
+/* ───────── Fixed Hamburger & Off-Canvas Nav ───────── */
 
-/* Off-canvas nav hidden by default */
-#nav-menu {
-  position: fixed;
-  top: 0;
-  left: -100%;
-  width: 70%;
-  max-width: 300px;
-  height: 100vh;
-  background: #f0f0f0;
-  padding-top: 70px;         /* match your header height */
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  transition: left 0.3s ease;
-  z-index: 1000;
-}
-/* Slide-in when active */
-#nav-menu.active {
-  left: 0;
-}
-
-/* Only show hamburger + off-canvas nav on mobile/tablet */
+/* Mobile/Tablet: ≤900px */
 @media (max-width: 900px) {
+  /* Show hamburger button */
   .hamburger {
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+  .hamburger span {
+    display: block;
+    height: 3px;
+    background: #ff0808;
+    border-radius: 2px;
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+
+  /* Off-canvas nav hidden off-screen */
+  #nav-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 70%;
+    max-width: 300px;
+    height: 100vh;
+    background: #f0f0f0;
+    padding-top: 70px;         /* match header height */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+
+  /* Slide in when active */
+  #nav-menu.active {
+    left: 0;
   }
 }
 
-/* ── Logo Alignment ── */
+/* Desktop & larger tablets: >900px */
+@media (min-width: 901px) {
+  /* Hide hamburger button */
+  .hamburger {
+    display: none;
+  }
+
+  /* Reset nav to horizontal, inline layout */
+  #nav-menu {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    background: none;
+    height: auto;
+    left: auto;
+    width: auto;
+    padding: 0;
+    transition: none;
+  }
+}
+
+/* ───────── Logo Alignment ───────── */
 .site-header .header-inner .logo-link {
   display: flex;
   align-items: center;
-  gap: 0.5rem;        /* space between image & text */
+  gap: 0.5rem;
 }
-
 .site-header .logo-icon {
-  height: 50px;       /* tweak as needed */
+  height: 50px;
   width: auto;
 }
-
 .site-header .logo-text {
-  font-size: 1.4rem;  /* adjust size */
-  line-height: 1;     /* prevents any extra vertical shift */
-  color: #171717;     /* or whatever your theme color is */
+  font-size: 1.4rem;
+  line-height: 1;
+  color: #171717;
 }
